@@ -1,0 +1,2 @@
+
+  module => manifest => class => type

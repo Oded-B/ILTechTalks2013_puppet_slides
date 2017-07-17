@@ -1,0 +1,17 @@
+###### erb template #######
+
+<% imgsrc_host_list = scope.function_foreman(["hosts", "hostgroup = img-src and environment = #{environment}"]) -%>
+
+<% imgsrc_host_list.each do |servername| -%>
+[IMG-SRC;<%= servername %>]
+      address ssh://munin@<%= servername %>/usr/share/munin/munin-async --spoolfetch
+<% end -%>
+
+###### result file ########
+
+[IMG-SRC;img-src1.taboolasyndication.com]
+      address ssh://munin@img-src1.taboolasyndication.com/usr/share/munin/munin-async --spoolfetch
+[IMG-SRC;img-src2.taboolasyndication.com]
+      address ssh://munin@img-src2.taboolasyndication.com/usr/share/munin/munin-async --spoolfetch
+[IMG-SRC;img-src3.taboolasyndication.com]
+     address ssh://munin@img-src3.taboolasyndication.com/usr/share/munin/munin-async --spoolfetch

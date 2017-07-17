@@ -1,0 +1,12 @@
+
+  Best practices
+    * Starting from common base
+    * Run as cron job or service
+    * Puppet forge
+    * Source code managment
+    * Reports
+    * File bucket
+    * Environments/branches
+    * Hiera
+    * ENC
+    * Style guide

@@ -1,0 +1,6 @@
+  
+  These guys can help: 
+    * Foreman
+    * Mcollective
+    * Puppetd
+    * IDE

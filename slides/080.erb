@@ -1,0 +1,18 @@
+###### erb template #######
+
+server_name = <%= ::fqdn %>
+
+<% #setting innodb_buffer_pool_size automagically  -%>
+innodb_buffer_pool_size = <%= (scope.lookupvar('::memorytotal').split(' ')[0].to_i * innodb_buffer_mem_factor.to_f).to_i -%>G
+
+<% #Here I use the last 3 octecs of the IP address to create a server-id -%>
+server-id = <%= scope.lookupvar('::ipaddress').split('.')[1..3].join %>
+
+
+###### result file ########
+
+server_name = foo.bar.co.il
+
+innodb_buffer_pool_size = 94G
+
+server-id = 5503
